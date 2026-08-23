@@ -15,13 +15,20 @@ document.querySelectorAll('.project').forEach(function (project) {
   var timer = null;
   var token = 0;              // bumps on every start/stop to cancel stale loops
   var SPEED = 16;             // ms per character
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function startTyping() {
     var mine = ++token;
-    typed.textContent = '';
     caret.classList.remove('done');
     desc.classList.add('is-visible');
 
+    if (reduceMotion.matches) {              // no typing animation: show it all at once
+      typed.textContent = fullText;
+      caret.classList.add('done');
+      return;
+    }
+
+    typed.textContent = '';
     var i = 0;
     (function step() {
       if (mine !== token) return;            // a newer hover/leave cancelled us
@@ -45,4 +52,7 @@ document.querySelectorAll('.project').forEach(function (project) {
 
   project.addEventListener('mouseenter', startTyping);
   project.addEventListener('mouseleave', stopTyping);
+  // keyboard support: typing also runs while the project link has focus
+  project.addEventListener('focusin', startTyping);
+  project.addEventListener('focusout', stopTyping);
 });
