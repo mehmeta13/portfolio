@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Packing — Mehmet Bacaksizlar</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="subpage">
+  <header class="site-header">
+    <a href="../index.html" class="name">Mehmet Bacaksizlar</a>
+    <div class="location">Berkeley, CA</div>
+    <a href="../index.html" class="back" aria-label="Back to home">←</a>
+    <img class="header-emblem" src="../grocery-packing-project-image.png" alt="Grocery Packing schematic" />
+  </header>
+
+  <main class="project-page">
+    <h1 class="project-title">Grocery Packing</h1>
+    <figure class="project-hero">
+      <img src="../grocery-packing-main.jpg" alt="Grocery packing robotic system with a SCARA-style arm sorting grocery items" />
+    </figure>
+
+    <div class="project-body">
+      <h2 class="project-subhead">Context</h2>
+      <p>
+        This was a two-quarter senior capstone project, built by a team of five. The
+        starting point was deliberately open-ended: we were given full autonomy to define
+        our own project, with no assigned problem, no reference design, and no constraints
+        on what to build. Out of everything we could have chosen, we decided to take on
+        automated grocery packing, the labor-intensive and easy-to-get-wrong task of
+        bagging groceries at checkout.
+      </p>
+      <p>
+        We took it from a single idea to a working machine. Over two quarters we designed
+        the system, sourced the parts, machined and 3D-printed the custom components,
+        assembled the arm from nothing, and built the full perception and control software
+        from scratch. The result is a self-contained robot that looks at a group of grocery
+        items, decides what to pick and where to put it, grasps each one, and packs it into
+        a bag, repeating the cycle autonomously until the order is done.
+      </p>
+
+      <h2 class="project-subhead">Part 1: What the System Does</h2>
+      <p>
+        The robot runs a complete loop from seeing an item to placing it in the bag, and it
+        re-plans after every single pick rather than following a fixed script.
+      </p>
+      <p>
+        It sees the items. Two cameras, a stereo camera and an overhead webcam, feed a
+        custom-trained vision model that identifies each grocery item and separates it from
+        the background. Combined with stereo depth data, this gives the system a 3D estimate
+        of every object: where it is, how tall it is, and how big its footprint is, so the
+        arm knows exactly where and how to reach.
+      </p>
+      <p>
+        It decides and grabs. Once an item is identified, the software calculates the exact
+        joint movements needed to reach it and chooses the best spot for it in the bag using
+        a packing algorithm that keeps items from colliding or toppling. A custom two-finger
+        gripper, lined with foam and silicone for grip, closes on the item and lifts it.
+      </p>
+      <p>
+        It moves the item. A 4-degree-of-freedom SCARA-style arm, built from lightweight
+        carbon fiber and machined aluminum, carries the gripper across the workspace: two
+        rotating joints handle position, a vertical joint sets height, and a wrist joint
+        sets orientation.
+      </p>
+      <p>
+        It checks its own work. After each grab, the system confirms the item actually left
+        the table before moving on. If a grab fails, it automatically retries, so one missed
+        pick never derails the rest of the run.
+      </p>
+      <p>
+        Across 64 autonomous test runs handling 454 grocery items, the robot completed 404
+        of 425 pick-and-place attempts, a 95.1% success rate.
+      </p>
+
+      <h2 class="project-subhead">Part 2: My Role</h2>
+      <p>
+        My focus was manufacturing, and my work ran from design through fabrication,
+        assembly, and testing. I turned the arm from a CAD model into a physical machine
+        that actually held together and moved.
+      </p>
+      <p>
+        I contributed to the mechanical design, shaping how parts would be built and
+        fastened so they were actually manufacturable rather than just drawable. From there
+        I fabricated the custom components the arm is made of, machining the aluminum parts
+        and 3D-printing the rest, then assembled the arm and end effector from the ground
+        up: bearings, belts, motors, and custom parts integrated into one working structure.
+      </p>
+      <p>
+        I also helped validate the system as it came together, on both the mechanical and
+        electronic sides, testing the joints and belt transmissions for rigidity and the
+        motors, drivers, and control circuitry for correct motion. The goal throughout was a
+        build that was rigid, reliable, and ready to carry the software the rest of the team
+        layered on top.
+      </p>
+
+      <h2 class="project-subhead">Source Material</h2>
+      <div class="source-grid">
+        <a class="source-tile" href="gp-source-1.html">
+          <img src="../gp-source-arm.jpg" alt="Final arm assembly, top-down, with labeled joints" />
+        </a>
+        <a class="source-tile" href="gp-source-2.html">
+          <img src="../gp-source-cad.jpg" alt="CAD and final build of the J1 coaxial assembly" />
+        </a>
+        <a class="source-tile" href="gp-source-3.html">
+          <img src="../grocery-checkout-poster.jpg" alt="Video of the robot running a grocery checkout" />
+          <span class="source-tile__play"></span>
+        </a>
+        <a class="source-tile" href="gp-source-4.html">
+          <img src="../grocery-capstone-poster.jpg" alt="Capstone demo video of the full system" />
+          <span class="source-tile__play"></span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="mailto:mehmetarif@berkeley.edu">mail</a>
+    <a href="https://www.linkedin.com/in/mehmetbacaksizlar" target="_blank" rel="noopener">linkedin</a>
+  </footer>
+</body>
+</html>

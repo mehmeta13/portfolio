@@ -1,0 +1,19 @@
+# Unused source originals (kept locally, not published)
+Final Capstone Video.mp4
+grocery checkout.mp4
+IMG_3443.MOV
+IMG_3443.MOV.png
+grocery checkout.mp4.png
+Final Capstone Video.mp4.png
+A7396096A49C43F6923F1F452BA4728A.png
+6718FDF969BC4CC8A649B4FDC5DA815F.png
+IMG_2618_copy.png
+GroceryPackingMainPage.png
+MASACmainpage.png
+masac-main.png
+Screenshot*.png
+
+# Dev-only
+devserver.py
+.claude/
+.DS_Store
