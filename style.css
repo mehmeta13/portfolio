@@ -487,4 +487,21 @@ body.subpage .project-page {
   .projects {
     gap: 48px;
   }
+
+  /* On phones the header and footer scroll with the page instead of
+     floating over the content. */
+  .site-header {
+    position: static;
+    padding: 28px 28px 0;
+  }
+
+  .home {
+    min-height: 0;
+    padding: 56px 24px 48px;
+  }
+
+  .site-footer {
+    position: static;
+    padding: 0 28px 36px;
+  }
 }
