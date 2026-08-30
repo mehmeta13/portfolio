@@ -504,4 +504,23 @@ body.subpage .project-page {
     position: static;
     padding: 0 28px 36px;
   }
+
+  /* No back arrows on phones — the browser handles going back. */
+  .back {
+    display: none;
+  }
+
+  /* On project pages the name/location collide with the centered emblem,
+     so the emblem stands alone in the header. */
+  body.project-detail .site-header .name,
+  body.project-detail .site-header .location {
+    display: none;
+  }
+
+  body.project-detail .header-emblem {
+    position: static;
+    display: block;
+    margin: 0 auto;
+    transform: none;
+  }
 }
