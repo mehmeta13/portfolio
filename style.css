@@ -436,14 +436,25 @@ body.subpage .site-header {
   position: relative;
 }
 
-/* Small centered project emblem, level with the name/location */
-.header-emblem {
+/* Small centered project emblem, level with the name/location.
+   It links back to the home page. */
+.header-emblem-link {
   position: absolute;
   left: 50%;
   top: 22px;
   transform: translateX(-50%);
+  display: block;
+}
+
+.header-emblem {
+  display: block;
   height: 72px;
   width: auto;
+  transition: transform 0.25s ease;
+}
+
+.header-emblem-link:hover .header-emblem {
+  transform: scale(1.05);
 }
 
 body.subpage .site-footer {
@@ -517,10 +528,10 @@ body.subpage .project-page {
     display: none;
   }
 
-  body.project-detail .header-emblem {
+  body.project-detail .header-emblem-link {
     position: static;
-    display: block;
-    margin: 0 auto;
     transform: none;
+    width: fit-content;
+    margin: 0 auto;
   }
 }
