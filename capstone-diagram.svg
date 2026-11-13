@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 490" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111111"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a3cf0"/>
+    </marker>
+  </defs>
+
+  <!-- corpus -->
+  <rect x="90" y="20" width="520" height="76" fill="#f6f6f7" stroke="#111111" stroke-width="1.2"/>
+  <text x="350" y="46" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">Machining Threads from Stack Exchange</text>
+  <text x="350" y="65" text-anchor="middle" font-size="10.5" fill="#8a8a8a">581 threads &#183; 751 answers &#183; 2,580 comments</text>
+  <text x="350" y="81" text-anchor="middle" font-size="10.5" fill="#8a8a8a">the pilot reads 30 threads and their 60 answers</text>
+
+  <!-- main chain (left) -->
+  <line x1="180" y1="96" x2="180" y2="146" stroke="#111111" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="152" width="320" height="76" fill="#ffffff" stroke="#1a3cf0" stroke-width="1.5"/>
+  <text x="180" y="178" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">1. Proposer</text>
+  <text x="180" y="197" text-anchor="middle" font-size="10.5" fill="#8a8a8a">lists what each answer takes for granted</text>
+  <text x="180" y="213" text-anchor="middle" font-size="10.5" fill="#8a8a8a">every item must quote the answer it relies on</text>
+
+  <line x1="180" y1="228" x2="180" y2="266" stroke="#111111" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="272" width="320" height="76" fill="#f6f6f7" stroke="#111111" stroke-width="1.2"/>
+  <text x="180" y="298" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">2. Second Reader</text>
+  <text x="180" y="317" text-anchor="middle" font-size="10.5" fill="#8a8a8a">rejects what is already stated, trivial, or fails its test</text>
+  <text x="180" y="333" text-anchor="middle" font-size="10.5" fill="#8a8a8a">195 proposed &#183; 113 kept</text>
+
+  <line x1="180" y1="348" x2="180" y2="386" stroke="#111111" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="392" width="320" height="76" fill="#ffffff" stroke="#1a3cf0" stroke-width="1.5"/>
+  <text x="180" y="418" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">3. Corroboration</text>
+  <text x="180" y="437" text-anchor="middle" font-size="10.5" fill="#8a8a8a">same thread &#183; other threads &#183; random passages, judged blind</text>
+  <text x="180" y="453" text-anchor="middle" font-size="10.5" fill="#8a8a8a">86% of the 109 non-trivial items unconfirmed</text>
+
+  <!-- per-thread checks (right) -->
+  <line x1="370" y1="96" x2="370" y2="310" stroke="#111111" stroke-width="1.2"/>
+  <line x1="370" y1="194" x2="383" y2="194" stroke="#111111" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="370" y1="310" x2="383" y2="310" stroke="#111111" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="388" y="152" width="292" height="84" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+  <text x="534" y="178" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">Thread Moves</text>
+  <text x="534" y="197" text-anchor="middle" font-size="10.5" fill="#8a8a8a">replies that ask for a detail, reject a premise,</text>
+  <text x="534" y="213" text-anchor="middle" font-size="10.5" fill="#8a8a8a">add context, or disagree</text>
+  <text x="534" y="229" text-anchor="middle" font-size="10.5" fill="#8a8a8a">163 moves, found in 30 of 30 threads</text>
+
+  <rect x="388" y="272" width="292" height="76" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+  <text x="534" y="298" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">Hidden-Answer Test</text>
+  <text x="534" y="317" text-anchor="middle" font-size="10.5" fill="#8a8a8a">predict from the question what experts will raise</text>
+  <text x="534" y="333" text-anchor="middle" font-size="10.5" fill="#8a8a8a">58% of raised points predicted &#183; 32% of guesses hit</text>
+
+  <!-- decoy control -->
+  <rect x="388" y="392" width="292" height="76" fill="#f6f6f7" stroke="#1a3cf0" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="534" y="418" text-anchor="middle" font-size="14" font-weight="600" fill="#111111">Decoy Control</text>
+  <text x="534" y="437" text-anchor="middle" font-size="10.5" fill="#8a8a8a">20 hand-written texts meant to be fully explicit</text>
+  <text x="534" y="453" text-anchor="middle" font-size="10.5" fill="#8a8a8a">naive prompt flagged 20 &#183; pipeline flagged 4</text>
+  <path d="M 388 430 L 355 430 L 355 214 L 344 214"
+        fill="none" stroke="#1a3cf0" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrowBlue)"/>
+</svg>
